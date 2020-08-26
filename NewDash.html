@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 180px; 
+  font-size: 28px; 
+  padding: 0px 10px;
+}
+.button {
+  background-color:  #818181; 
+  border: none;
+  color: Black;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+div.ex1 {
+ 
+  height: 180px;
+  width:80%;
+  overflow-y: scroll;
+  position:relative;
+  top: 30px;
+}
+div.ex2 {
+ 
+  height: 280px;
+  width:80%;
+  overflow-y: scroll;
+  position:relative;
+  top: 100px;
+}
+#caption{
+background: grey;
+font-size: 25px;
+}
+#customers {
+  
+  border-collapse: collapse;
+  width:80%;
+  font-size: 20px;
+   
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="#about">Welcome</a>
+  
+  
+  
+</div>
+
+<div class="main">
+  <h3>My Dashboard</h3>
+  <div class="button">
+ <button class="button button1"  onclick="openForm()"><h4>Add Project</h4> </button>
+   </div>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>New Project</h1>
+
+    <label for="project name"><b>Project Name</b></label>
+    <input type="text" placeholder="Enter Project Name" name="project name" required>
+
+    <label for="tech stack"><b>Tech Stack</b></label>
+    <input type="text" placeholder="Enter Tech Stack" name="tech stack" required>
+    
+    <label for="description"><b>Description</b></label>
+    <input type="text" placeholder="Enter Description" name="description" required>
+
+<label for="kudos"><b>Kudos</b></label>
+    <input type="text" placeholder="Enter Kudos" name="kudos" required>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+   <div class="ex1">
+   <table id="customers" >
+   <caption id= "caption"><h5>Project Status</h5></caption>
+  <tr>
+    <th>SN</th>
+    <th>Project Name</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td><a href="#">dbKudos</a></td>
+    <td>Ongoing</td>
+  </tr>
+  <tr>
+    <td>2</td>
+     <td><a href="#">dbCrowdSource</a></td>
+    <td>Ongoing</td>
+  </tr>
+  <tr>
+    <td>3</td>
+     <td><a href="#">dbHelpDesk</a></td>
+    <td>Completed</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td><a href="#">dbHealthSupport</a></td>
+    <td>Completed</td>
+  </tr>
+  <tr>
+    <td>5</td>
+   <td><a href="#">dbGradHelp</a></td>
+    <td>Completed</td>
+  </tr>
+  
+</table>
+</div>
+ <div class="ex2">
+   <table id="customers" style="width:72%">
+   <caption id= "caption"><h5>View Applications</h5></caption>
+  <tr>
+    <th>SN</th>
+    <th>Name</th>
+    <th>Project Applied</th>
+    <th>Tech Stack</th>
+    <th>Confirmation</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>John</td>
+    <td>dbKudos</td>
+    <td>Python, PHP</td>
+    <td><button onclick="myFunction()">Accept</button>
+    <button onclick="myFunction()">Reject</button></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Mona</td>
+    <td>dbCrowdSource</td>
+    <td>Java</td>
+    <td><button onclick="myFunction()">Accept</button>
+    <button onclick="myFunction()">Reject</button></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>James</td>
+    <td>dbDesk</td>
+    <td>Php, Html</td>
+    <td><button onclick="myFunction()">Accept</button>
+    <button onclick="myFunction()">Reject</button></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Kane</td>
+    <td>dbHealthSupport</td>
+    <td>React Js</td>
+    <td><button onclick="myFunction()">Accept</button>
+    <button onclick="myFunction()">Reject</button></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Jack</td>
+    <td>dbGradHelp</td>
+    <td>Angular</td>
+    <td><button onclick="myFunction()">Accept</button>
+    <button onclick="myFunction()">Reject</button></td>
+  </tr>
+  
+</table>
+</div>
+ 
+</div>
+   
+</body>
+</html> 
